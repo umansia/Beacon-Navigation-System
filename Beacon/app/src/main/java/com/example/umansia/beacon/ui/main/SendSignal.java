@@ -25,8 +25,8 @@ public class SendSignal extends AsyncTask<String,Void,Void> {
         try {
             // SET CONNECTIONSTRING
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            String username = "eofis";
-            String password = "4741KJU788";
+            String username = "beacon";
+            String password = "egplts8uqlweE";
             Connection DbConn = DriverManager.getConnection("jdbc:jtds:sqlserver://195.46.148.135:1433;databaseName=Beacon;instance=SQLEXPRESS;user=" + username + ";password=" + password);
 
             Log.w("Connection", "open");
