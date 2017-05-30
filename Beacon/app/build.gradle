@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "com.example.umansia.beacon"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    defaultConfig {
+
+        multiDexEnabled true
+        jackOptions {
+            enabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'uk.co.alt236:bluetooth-le-library-android:1.0.0'
+    compile 'com.anthonycr.grant:permissions:1.0'
+    compile 'com.lemmingapex.trilateration:trilateration:1.0.1'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'net.sourceforge.jtds:jtds:1.3.1'
+
+
+    compile 'junit:junit:4.12'
+}
